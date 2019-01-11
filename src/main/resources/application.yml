@@ -1,0 +1,28 @@
+#项目相关配置
+ssm:
+  version: 1.0.0
+
+#jdbc 配置
+spring:
+  #多环境配置
+  profiles:
+    active: dev
+#  mvc:
+#    view:w
+#      #默认前缀
+#      prefix:
+#      #响应页面默认后缀
+#      suffix: .html
+#使用springboot自带的activemq，所以注释了下面的activemq配置
+#  activemq:
+#    broker-url: tcp://localhost:61616
+#    user: admin
+#    password: admin
+#tomcat 配置
+server:
+  port: 80
+#mybats配置
+mybatis:
+  mapper-locations:  classpath:mybatis/mapper/*Mapper.xml
+  type-aliases-package: cn.xyr.ssm.common.model.*
+  configLocation: classpath:mybatis/mybatis-config.xml

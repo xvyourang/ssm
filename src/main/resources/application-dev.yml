@@ -1,0 +1,25 @@
+#默认环境配置
+spring:
+  datasource:
+    url: jdbc:mysql://127.0.0.1:3306/lsf_homestay?serverTimezone=GMT%2B8&useUnicode=true&characterEncoding=utf-8&zeroDateTimeBehavior=convertToNull&transformedBitIsBoolean=true
+    #登录用户名
+    username: root
+    password: root
+    #执行语句用户名
+    #    data-username: root
+    #    data-password: root
+    #  mvc:
+    #    static-path-pattern: /static/**
+    #    #关闭后缀匹配 请求地址 index.*都匹配 index
+    #    pathmatch:
+    #      use-registered-suffix-pattern: true
+    #   #redis配置
+  redis:
+    host: 127.0.0.1
+    port: 6379
+    password:
+upload:
+#虚拟映射路径
+  imagesPath: /static/images/
+  #虚拟映射实际路径
+  imagesMappingPath: E:/idea-project/upload/lsf_homestay/
