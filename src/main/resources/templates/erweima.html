@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>二维码测试</title>
+</head>
+<body>
+<div id="ewm">555</div>
+<script type="text/javascript" charset="utf-8" src="../static/js/jquery-3.3.1.min.js"></script>
+<script type="text/javascript" charset="utf-8" src="../static/js/jquery.qrcode.min.js"></script>
+<script type="text/javascript">
+        $('#ewm').qrcode("www.xyr.com");//简单粗暴
+
+        // $("#code").qrcode({  //指定大小
+        //     render: "table", //table方式
+        //     width: 200, //宽度
+        //     height:200, //高度
+        //     text: "www.helloweba.net" //任意内容
+        // });
+</script>
+</body>
+</html>
