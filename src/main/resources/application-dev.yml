@@ -18,6 +18,9 @@ spring:
     host: 127.0.0.1
     port: 6379
     password:
+  #关闭缓存 不然测试的时候无法热更新静态页面和js
+  thymeleaf:
+    cache: false
 upload:
 #虚拟映射路径
   imagesPath: /static/images/

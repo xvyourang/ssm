@@ -38,4 +38,8 @@ public class PageController extends BaseController {
         dto.setList(list);
         return dto;
     }
+    @RequestMapping("/erweima")
+    public String erwima() {
+        return "erweima";
+    }
 }
