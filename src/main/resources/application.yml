@@ -26,3 +26,5 @@ mybatis:
   mapper-locations:  classpath:mybatis/mapper/*Mapper.xml
   type-aliases-package: cn.xyr.ssm.common.model.*
   configLocation: classpath:mybatis/mybatis-config.xml
+logging:
+  file: /home/ssm/logs.log
