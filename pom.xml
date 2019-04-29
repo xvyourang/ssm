@@ -122,7 +122,12 @@
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-activemq</artifactId>
         </dependency>
-
+        <!-- 第三方解密库-->
+        <dependency>
+            <groupId>org.bouncycastle</groupId>
+            <artifactId>bcprov-jdk15on</artifactId>
+            <version>1.57</version>
+        </dependency>
     </dependencies>
 
     <build>

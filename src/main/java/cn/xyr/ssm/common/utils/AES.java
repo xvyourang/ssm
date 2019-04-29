@@ -1,3 +1,5 @@
+package cn.xyr.ssm.common.utils;
+
 import org.bouncycastle.jce.provider.BouncyCastleProvider;
 import org.bouncycastle.util.encoders.Hex;
 
