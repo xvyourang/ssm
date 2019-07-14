@@ -34,7 +34,6 @@ public class ZipUtils {
         //fileSet.setIncludes("**/*.java"); 包括哪些文件或文件夹 eg:zip.setIncludes("*.java");
         //fileSet.setExcludes(...); 排除哪些文件或文件夹
         zip.addFileset(fileSet);
-
         zip.execute();
     }
 }
