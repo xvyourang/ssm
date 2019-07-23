@@ -31,7 +31,7 @@ public class FileImpl implements FileBiz {
 
 //    @Resource
 //    private Environment env;
-    @Value("upload:imagesPath")
+    @Value("${upload:imagesPath}")
     private String url;
 
     @Override
