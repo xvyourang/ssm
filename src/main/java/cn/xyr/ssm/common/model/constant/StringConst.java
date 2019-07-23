@@ -4,9 +4,8 @@ import java.util.HashSet;
 import java.util.Set;
 
 /**
- * @Author
+ * @Author XYR
  * @Create time: @2018/8/7} 22:17
- * @Description:
  */
 public class StringConst {
 
@@ -19,9 +18,13 @@ public class StringConst {
      * 缓存session
      */
     public static final String SESSION_CACHE_NAME = "session";
+    /**
+     * 单点登录
+     */
     public static final String SESSION_ID_KEY_PREFIX = "session_id_service_";
 
     public static final Set<String> imgSet = new HashSet<>();
+
 
     static {
         imgSet.add(".jpg");

@@ -18,12 +18,12 @@ import java.lang.reflect.Method;
 import java.util.List;
 
 /**
- * ReportUtil
+ * ReportUtils
  * 导出excel表格
  *
  * @author A
  */
-public class ReportUtil {
+public class ReportUtils {
 
 
     /**

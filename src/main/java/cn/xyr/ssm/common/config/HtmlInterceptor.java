@@ -23,6 +23,9 @@ import java.util.List;
  */
 @Configuration
 public class HtmlInterceptor extends WebMvcConfigurationSupport {
+    /**
+     * 过滤器白名单列表
+     */
     private static List<String> excludePathList = new ArrayList<>();
 
     static {

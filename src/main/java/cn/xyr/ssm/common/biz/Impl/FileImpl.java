@@ -3,19 +3,16 @@ package cn.xyr.ssm.common.biz.Impl;
 
 import cn.xyr.ssm.common.biz.FileBiz;
 import cn.xyr.ssm.common.model.constant.StringConst;
-import cn.xyr.ssm.common.utils.StringUtil;
+import cn.xyr.ssm.common.utils.StringUtils;
 import cn.xyr.ssm.common.utils.exception.BizException;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Value;
-import org.springframework.core.env.Environment;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 import org.springframework.util.ResourceUtils;
 import org.springframework.web.multipart.MultipartFile;
-import org.thymeleaf.util.StringUtils;
 
-import javax.annotation.Resource;
 import javax.servlet.http.HttpServletRequest;
 import java.io.File;
 import java.io.FileNotFoundException;
@@ -41,14 +38,14 @@ public class FileImpl implements FileBiz {
     public String fileUpload(HttpServletRequest request, MultipartFile file, String... paths) {
         String resultPath;
         String path;
-        StringBuffer sb = new StringBuffer("/static/images/");
+        StringBuilder sb = new StringBuilder("/static/images/");
 //                            new StringBuffer(env.getProperty("upload.imagesPath"));
         try {
             if (file == null || file.isEmpty()) {
                 throw new BizException("上传文件为空");
             }
             String originalFilename = file.getOriginalFilename();
-            String ext = StringUtils.substring(originalFilename, originalFilename.lastIndexOf("."));
+            String ext = org.thymeleaf.util.StringUtils.substring(originalFilename, originalFilename.lastIndexOf("."));
             if (StringConst.imgSet.contains(ext.toLowerCase())) {
                 throw new BizException("请上传图片格式文件");
             }
@@ -64,7 +61,7 @@ public class FileImpl implements FileBiz {
                 sb.append(File.separator).append(str);
             }
             sb.append(File.separator);
-            String fileName = StringUtil.getFile();
+            String fileName = StringUtils.getFile();
             resultPath = path + sb.toString();
             File f = new File(resultPath);
             f.mkdirs();//创建父目录

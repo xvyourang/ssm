@@ -10,7 +10,7 @@ import java.util.Map;
  */
 public class BizException extends RuntimeException {
 
-    private Map<String, String> mesageMap;
+    private Map<String, String> messageMap;
     private String message = ResCodeEnum.ERROR.getResMessage();
     private String code = ResCodeEnum.ERROR.getResCode();
 
@@ -22,7 +22,7 @@ public class BizException extends RuntimeException {
 
     public BizException(Map<String, String> messageMap, String message, String code) {
         this(message, code);
-        this.mesageMap = messageMap;
+        this.messageMap = messageMap;
     }
 
 
@@ -55,16 +55,16 @@ public class BizException extends RuntimeException {
      * @return the message map
      */
     public Map<String, String> getMessageMap() {
-        return mesageMap;
+        return messageMap;
     }
 
 
     @Override
     public String toString() {
-        final StringBuilder sb = new StringBuilder("BizException{");
-        sb.append("message='").append(message).append('\'');
-        sb.append(", code='").append(code).append('\'');
-        sb.append('}');
-        return sb.toString();
+        return "BizException{" +
+                "messageMap=" + messageMap +
+                ", message='" + message + '\'' +
+                ", code='" + code + '\'' +
+                '}';
     }
 }

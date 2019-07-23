@@ -8,9 +8,18 @@ import java.util.HashMap;
 /**
  * 前端数据返回model
  *
- * @author A
+ * @author XYR
  */
 public class WebDTO<T> extends HashMap<String, Object> {
+    /**
+     *  返回码字段
+     */
+    public static final String RES_CODE = "resCode";
+    /**
+     * 返回信息字段
+     */
+    public static final String RES_MSG = "resMsg";
+
     //返回码
     private String resCode;
     //返回码描述
@@ -35,7 +44,7 @@ public class WebDTO<T> extends HashMap<String, Object> {
 
     public void setResCode(String resCode) {
         this.resCode = resCode;
-        put("resCode", resCode);
+        put(RES_CODE, resCode);
     }
 
     public String getResMsg() {
@@ -44,7 +53,7 @@ public class WebDTO<T> extends HashMap<String, Object> {
 
     public void setResMsg(String resMsg) {
         this.resMsg = resMsg;
-        put("resMsg", resMsg);
+        put(RES_MSG, resMsg);
     }
 
     public T getData() {

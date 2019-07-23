@@ -6,8 +6,8 @@ package cn.xyr.ssm.common.utils.enumtype;
  */
 public enum ResCodeEnum {
     SUCCESS("000000", "成功"),
-    ERROR("900001","失败");
-
+    ERROR("900001","失败"),
+    SYSTEM_EXCEPTION("9999999", "系统异常，请联系管理员");
     private String resCode;
     private String resMessage;
 

@@ -54,7 +54,7 @@ public class WebSocketServer {
 //        System.out.println("来自客户端的消息:" + message);
 //        try {
 //            Map<String, String> map = new HashMap<>();
-//            String[] strings = message.split(StringUtil.SEPARATOR);
+//            String[] strings = message.split(StringUtils.SEPARATOR);
 //            for (String s : strings) {
 //                int index = s.indexOf('=');
 //                map.put(s.substring(0, index), s.substring(index + 1));

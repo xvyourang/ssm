@@ -24,11 +24,11 @@ import java.util.Arrays;
  * 介于java 不支持PKCS7Padding，只支持PKCS5Padding 但是PKCS7Padding 和 PKCS5Padding 没有什么区别
  * 要实现在java端用PKCS7Padding填充，需要用到bouncycastle组件来实现
  */
-public class AES {
+public class AESUtils {
     // 算法名称
-    private static final String KEY_ALGORITHM = "AES";
+    private static final String KEY_ALGORITHM = "AESUtils";
     // 加解密算法/模式/填充方式
-    private static final String algorithmStr = "AES/CBC/PKCS7Padding";
+    private static final String algorithmStr = "AESUtils/CBC/PKCS7Padding";
     //
 
     public static void main(String[] args) {

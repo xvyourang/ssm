@@ -12,7 +12,7 @@ import java.util.Random;
  * @author XYR
  * @time 2018/11/22 16:11
  */
-public class StringUtil {
+public class StringUtils {
     /**
      * 字符串分隔符
      */

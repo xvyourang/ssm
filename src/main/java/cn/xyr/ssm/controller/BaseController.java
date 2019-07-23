@@ -1,6 +1,5 @@
 package cn.xyr.ssm.controller;
 
-import com.alibaba.fastjson.JSONObject;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.propertyeditors.CustomDateEditor;
@@ -20,7 +19,7 @@ import java.util.Date;
  * BaseController
  *
  * @author weixiang.wu
- * @date 2018 -04-01 13:16
+ * @time 2018 -04-01 13:16
  */
 @Controller
 public class BaseController {
@@ -104,6 +103,7 @@ public class BaseController {
         dateFormat.setLenient(false);
         binder.registerCustomEditor(Date.class, new CustomDateEditor(dateFormat, true));
     }
+
     @InitBinder
     public void initBinder(ServletRequestDataBinder binder) {
         binder.registerCustomEditor(Date.class, new CustomDateEditor(
