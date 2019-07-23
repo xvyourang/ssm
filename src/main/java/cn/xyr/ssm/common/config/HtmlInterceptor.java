@@ -66,8 +66,8 @@ public class HtmlInterceptor extends WebMvcConfigurationSupport {
 
     @Override
     public void addResourceHandlers(ResourceHandlerRegistry registry) {
-        registry.addResourceHandler("/static/**") //静态资源访问路径
-                .addResourceLocations("classpath:/static/");     //静态资源映射路径
+        registry.addResourceHandler("/static/**") // 静态资源访问路径
+                .addResourceLocations("classpath:/static/"); // 静态资源映射路径 映射虚拟路径时使用file:D:/static
         super.addResourceHandlers(registry);
     }
 
