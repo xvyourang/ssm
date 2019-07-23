@@ -128,14 +128,37 @@
             <artifactId>bcprov-jdk15on</artifactId>
             <version>1.57</version>
         </dependency>
-<!--        zip 压缩工具-->
+        <!--        zip 压缩工具-->
         <dependency>
             <groupId>org.apache.ant</groupId>
             <artifactId>ant</artifactId>
             <version>1.7.0</version>
         </dependency>
     </dependencies>
-
+    <!--    多环境配置-->
+    <profiles>
+        <profile>
+            <id>dev</id>
+            <activation>
+                <activeByDefault>true</activeByDefault>
+            </activation>
+            <properties>
+                <profileActive>dev</profileActive>
+            </properties>
+        </profile>
+        <profile>
+            <id>test</id>
+            <properties>
+                <profileActive>test</profileActive>
+            </properties>
+        </profile>
+        <profile>
+            <id>pro</id>
+            <properties>
+                <profileActive>pro</profileActive>
+            </properties>
+        </profile>
+    </profiles>
     <build>
         <!--<resources>-->
         <!--<resource>-->

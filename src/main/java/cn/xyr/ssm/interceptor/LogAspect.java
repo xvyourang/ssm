@@ -5,12 +5,15 @@ import com.alibaba.fastjson.JSONObject;
 import org.aspectj.lang.JoinPoint;
 import org.aspectj.lang.annotation.AfterReturning;
 import org.aspectj.lang.annotation.Aspect;
+import org.aspectj.lang.annotation.Before;
 import org.aspectj.lang.reflect.MethodSignature;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Component;
 
 import java.lang.reflect.Method;
+import java.util.HashMap;
+import java.util.Map;
 
 /**
  * @author XYR
@@ -28,15 +31,28 @@ public class LogAspect {
 //    }
 
     /**
-     * 增加响应切面，打印响应数据。
+     * 接口响应前切面，打印响应数据。
      */
     @AfterReturning(value = "within(cn.xyr.ssm.controller..*)", returning = "dto")
     public void after(JoinPoint joinPoint, Object dto) {
-        if (dto instanceof WebDTO) {
-            MethodSignature signature = (MethodSignature) joinPoint.getSignature();
-            Method method = signature.getMethod();
-            log.info("接口" + method.getDeclaringClass().getName() + "." + method.getName() + "响应数据为【" + JSONObject.toJSONString(dto) + "】");
+        if (log.isDebugEnabled()) {
+            if (dto instanceof WebDTO) {
+                MethodSignature signature = (MethodSignature) joinPoint.getSignature();
+                Method method = signature.getMethod();
+                log.debug("接口[{}.{}],响应数据为[{}]", method.getDeclaringClass().getName(), method.getName(), JSONObject.toJSONString(dto));
+            }
         }
     }
 
+    /**
+     * 接口进入时切面，打印请求数据
+     */
+    @Before(value = "within(cn.xyr.ssm.controller..*)")
+    public void before(JoinPoint joinPoint) {
+        if (log.isDebugEnabled()) {
+            MethodSignature signature = (MethodSignature) joinPoint.getSignature();
+            Method method = signature.getMethod();
+            log.debug("接口[{}.{}],请求数据为[{}]", method.getDeclaringClass().getName(), method.getName(), JSONObject.toJSONString(joinPoint.getArgs()));
+        }
+    }
 }

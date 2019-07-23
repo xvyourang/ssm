@@ -32,6 +32,13 @@ public class WebDTO<T> extends HashMap<String, Object> {
     private int totalPages;
 
     private PageList<T> list;
+    public WebDTO(){
+    }
+    public WebDTO(T t) {
+        this.data = t;
+        put("data", t);
+        setResCode(ResCodeEnum.SUCCESS);
+    }
 
     public void setResCode(ResCodeEnum resCode) {
         setResCode(resCode.getResCode());

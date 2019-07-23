@@ -1,4 +1,4 @@
-#默认环境配置
+#pro环境配置
 #tomcat 配置
 server:
   port: 80

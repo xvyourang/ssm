@@ -6,7 +6,7 @@ ssm:
 spring:
   #多环境配置
   profiles:
-    active: dev
+    active: @profileActive@
 #  mvc:
 #    view:w
 #      #默认前缀
@@ -18,13 +18,10 @@ spring:
 #    broker-url: tcp://localhost:61616
 #    user: admin
 #    password: admin
-#tomcat 配置
-server:
-  port: 80
+
 #mybats配置
 mybatis:
   mapper-locations:  classpath:mybatis/mapper/*Mapper.xml
   type-aliases-package: cn.xyr.ssm.common.model.*
   configLocation: classpath:mybatis/mybatis-config.xml
-logging:
-  file: /home/ssm/logs.log
+
