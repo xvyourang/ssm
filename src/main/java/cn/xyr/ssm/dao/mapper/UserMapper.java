@@ -1,6 +1,6 @@
-package cn.xyr.ssm.common.dao.mapper;
+package cn.xyr.ssm.dao.mapper;
 
-import cn.xyr.ssm.common.model.po.User;
+import cn.xyr.ssm.model.po.User;
 
 public interface UserMapper {
     int deleteByPrimaryKey(Integer id);

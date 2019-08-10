@@ -1,6 +1,6 @@
-package cn.xyr.ssm.common.biz.Impl;
+package cn.xyr.ssm.service.web.Impl;
 
-import cn.xyr.ssm.common.biz.JedisBiz;
+import cn.xyr.ssm.service.web.JedisService;
 import org.springframework.data.redis.core.RedisTemplate;
 import org.springframework.data.redis.core.StringRedisTemplate;
 import org.springframework.stereotype.Service;
@@ -13,7 +13,7 @@ import javax.annotation.Resource;
  * @time 2018/10/18 15:10
  */
 @Service
-public class JedisImpl implements JedisBiz {
+public class JedisServiceImpl implements JedisService {
 
     @Resource
     private RedisTemplate<String, Object> redisTemplate;

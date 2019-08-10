@@ -1,4 +1,4 @@
-package cn.xyr.ssm.common.service.activemq;
+package cn.xyr.ssm.service.activemq;
 
 import org.springframework.jms.annotation.JmsListener;
 import org.springframework.stereotype.Component;

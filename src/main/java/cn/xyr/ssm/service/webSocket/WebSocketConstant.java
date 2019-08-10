@@ -1,4 +1,4 @@
-package cn.xyr.ssm.webSocket;
+package cn.xyr.ssm.service.webSocket;
 
 import javax.websocket.Session;
 import java.io.IOException;

@@ -1,6 +1,6 @@
 package cn.xyr.ssm;
 
-import cn.xyr.ssm.common.service.activemq.ProducerService;
+import cn.xyr.ssm.service.activemq.ProducerService;
 import org.apache.activemq.command.ActiveMQQueue;
 import org.junit.Test;
 import org.junit.runner.RunWith;

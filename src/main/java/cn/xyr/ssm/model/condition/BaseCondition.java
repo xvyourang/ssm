@@ -1,4 +1,4 @@
-package cn.xyr.ssm.common.model.condition;
+package cn.xyr.ssm.model.condition;
 
 
 import com.github.miemiedev.mybatis.paginator.domain.Order;

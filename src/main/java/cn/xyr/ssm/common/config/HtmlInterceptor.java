@@ -1,6 +1,6 @@
 package cn.xyr.ssm.common.config;
 
-import cn.xyr.ssm.interceptor.LoginInterceptor;
+import cn.xyr.ssm.handler.LoginInterceptor;
 import com.alibaba.fastjson.serializer.SerializerFeature;
 import com.alibaba.fastjson.support.config.FastJsonConfig;
 import com.alibaba.fastjson.support.spring.FastJsonHttpMessageConverter;

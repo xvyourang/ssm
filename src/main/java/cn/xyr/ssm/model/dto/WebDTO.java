@@ -1,4 +1,4 @@
-package cn.xyr.ssm.common.model.dto;
+package cn.xyr.ssm.model.dto;
 
 import cn.xyr.ssm.common.utils.enumtype.ResCodeEnum;
 import com.github.miemiedev.mybatis.paginator.domain.PageList;

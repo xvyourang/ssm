@@ -1,7 +1,7 @@
 package cn.xyr.ssm.controller;
 
-import cn.xyr.ssm.common.model.dto.WebDTO;
-import cn.xyr.ssm.common.model.po.User;
+import cn.xyr.ssm.model.dto.WebDTO;
+import cn.xyr.ssm.model.po.User;
 import cn.xyr.ssm.common.utils.enumtype.ResCodeEnum;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;

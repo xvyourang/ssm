@@ -1,8 +1,8 @@
-package cn.xyr.ssm.common.biz.Impl;
+package cn.xyr.ssm.service.web.Impl;
 
 
-import cn.xyr.ssm.common.biz.FileBiz;
-import cn.xyr.ssm.common.model.constant.StringConst;
+import cn.xyr.ssm.service.web.FileService;
+import cn.xyr.ssm.model.constant.StringConst;
 import cn.xyr.ssm.common.utils.StringUtils;
 import cn.xyr.ssm.common.utils.exception.BizException;
 import org.slf4j.Logger;
@@ -24,9 +24,9 @@ import java.io.FileNotFoundException;
  */
 @Service
 @Transactional
-public class FileImpl implements FileBiz {
+public class FileServiceImpl implements FileService {
 
-    private static final Logger logger = LoggerFactory.getLogger(FileImpl.class);
+    private static final Logger logger = LoggerFactory.getLogger(FileServiceImpl.class);
 
 
 //    @Resource

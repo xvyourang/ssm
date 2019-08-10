@@ -1,4 +1,4 @@
-package cn.xyr.ssm.common.model.constant;
+package cn.xyr.ssm.model.constant;
 
 import java.util.HashSet;
 import java.util.Set;

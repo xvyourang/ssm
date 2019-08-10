@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
-<mapper namespace="cn.xyr.ssm.common.dao.mapper.UserMapper">
-    <resultMap id="BaseResultMap" type="cn.xyr.ssm.common.model.po.User">
+<mapper namespace="cn.xyr.ssm.dao.mapper.UserMapper">
+    <resultMap id="BaseResultMap" type="cn.xyr.ssm.model.po.User">
         <id column="id" property="id" jdbcType="INTEGER"/>
         <result column="user_name" property="userName" jdbcType="VARCHAR"/>
         <result column="password" property="password" jdbcType="VARCHAR"/>
@@ -29,7 +29,7 @@
     delete from user
     where id = #{id,jdbcType=INTEGER}
   </delete>
-    <insert id="insert" parameterType="cn.xyr.ssm.common.model.po.User">
+    <insert id="insert" parameterType="cn.xyr.ssm.model.po.User">
     insert into user (id, user_name, password, 
       salt, head_img, mobile, 
       is_landlord, noteCode, code_time, 
@@ -41,7 +41,7 @@
       #{createTime,jdbcType=TIMESTAMP}, #{updateTime,jdbcType=TIMESTAMP}, #{isDelete,jdbcType=BIT}
       )
   </insert>
-    <insert id="insertSelective" parameterType="cn.xyr.ssm.common.model.po.User">
+    <insert id="insertSelective" parameterType="cn.xyr.ssm.model.po.User">
         insert into user
         <trim prefix="(" suffix=")" suffixOverrides=",">
             <if test="id != null">
@@ -120,7 +120,7 @@
             </if>
         </trim>
     </insert>
-    <update id="updateByPrimaryKeySelective" parameterType="cn.xyr.ssm.common.model.po.User">
+    <update id="updateByPrimaryKeySelective" parameterType="cn.xyr.ssm.model.po.User">
         update user
         <set>
             <if test="userName != null">
@@ -159,7 +159,7 @@
         </set>
         where id = #{id,jdbcType=INTEGER}
     </update>
-    <update id="updateByPrimaryKey" parameterType="cn.xyr.ssm.common.model.po.User">
+    <update id="updateByPrimaryKey" parameterType="cn.xyr.ssm.model.po.User">
     update user
     set user_name = #{userName,jdbcType=VARCHAR},
       password = #{password,jdbcType=VARCHAR},

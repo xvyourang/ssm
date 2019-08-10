@@ -1,4 +1,4 @@
-package cn.xyr.ssm.webSocket;
+package cn.xyr.ssm.service.webSocket;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;

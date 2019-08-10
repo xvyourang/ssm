@@ -16,7 +16,7 @@ import org.springframework.transaction.annotation.EnableTransactionManagement;
 @EnableTransactionManagement
 //扫描的是mapper.xml中namespace指向值的包位置
 //@EnableAutoConfiguration(exclude={DataSourceAutoConfiguration.class})
-@MapperScan(value = {"cn.xyr.ssm.common.dao.mapper"})
+@MapperScan(value = {"cn.xyr.ssm.dao.mapper"})
 public class SsmApplication {
     private final static Logger log = LoggerFactory.getLogger(SsmApplication.class);
 

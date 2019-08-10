@@ -22,6 +22,6 @@ spring:
 #mybats配置
 mybatis:
   mapper-locations:  classpath:mybatis/mapper/*Mapper.xml
-  type-aliases-package: cn.xyr.ssm.common.model.*
+  type-aliases-package: cn.xyr.ssm.model.*
   configLocation: classpath:mybatis/mybatis-config.xml
 

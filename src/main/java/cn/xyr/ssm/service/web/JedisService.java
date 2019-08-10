@@ -1,11 +1,11 @@
-package cn.xyr.ssm.common.biz;
+package cn.xyr.ssm.service.web;
 
 /**
  * @author xyr
  * @time 2018/10/18 14:56
  */
 
-public interface JedisBiz {
+public interface JedisService {
     String get(String key);
 
     /**

@@ -1,4 +1,4 @@
-package cn.xyr.ssm.interceptor;
+package cn.xyr.ssm.handler;
 
 
 import org.slf4j.Logger;

@@ -1,6 +1,6 @@
-package cn.xyr.ssm.interceptor;
+package cn.xyr.ssm.handler;
 
-import cn.xyr.ssm.common.model.dto.WebDTO;
+import cn.xyr.ssm.model.dto.WebDTO;
 import com.alibaba.fastjson.JSONObject;
 import org.aspectj.lang.JoinPoint;
 import org.aspectj.lang.annotation.AfterReturning;

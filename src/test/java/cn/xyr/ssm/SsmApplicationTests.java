@@ -1,7 +1,7 @@
 package cn.xyr.ssm;
 
-import cn.xyr.ssm.common.biz.JedisBiz;
-import cn.xyr.ssm.common.service.activemq.ProducerService;
+import cn.xyr.ssm.service.web.JedisService;
+import cn.xyr.ssm.service.activemq.ProducerService;
 import cn.xyr.ssm.common.utils.HttpUtils;
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -16,7 +16,7 @@ public class SsmApplicationTests {
     @Resource
     ProducerService producerService;
     @Resource
-    JedisBiz jedisBiz;
+    JedisService jedisBiz;
 
     public static void main(String[] args) {
         HttpUtils.postWithParamsForString("http://localhost:80",null);

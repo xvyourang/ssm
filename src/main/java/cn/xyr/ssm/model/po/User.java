@@ -1,4 +1,4 @@
-package cn.xyr.ssm.common.model.po;
+package cn.xyr.ssm.model.po;
 
 import java.util.Date;
 
