@@ -7,6 +7,9 @@ import java.util.Map;
 
 /**
  * 公共异常类
+ *
+ * @author xyr
+ * @time 2019年8月10日 16:43:35
  */
 public class BizException extends RuntimeException {
 

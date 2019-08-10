@@ -18,7 +18,7 @@ import java.util.Date;
 /**
  * BaseController
  *
- * @author weixiang.wu
+ * @author xyr
  * @time 2018 -04-01 13:16
  */
 @Controller
@@ -95,10 +95,10 @@ public class BaseController {
 //    }
 
     /**
-     * 日期格式转换过滤
+     * 日期格式转换过滤器
      */
     @InitBinder
-    public void initBinder(WebDataBinder binder) {//日期格式转换过滤
+    public void initBinder(WebDataBinder binder) {
         SimpleDateFormat dateFormat = new SimpleDateFormat("yyyyMMdd");
         dateFormat.setLenient(false);
         binder.registerCustomEditor(Date.class, new CustomDateEditor(dateFormat, true));

@@ -11,6 +11,11 @@ import org.springframework.context.ConfigurableApplicationContext;
 import org.springframework.core.env.Environment;
 import org.springframework.transaction.annotation.EnableTransactionManagement;
 
+/**
+ *  启动类
+ * @author xyr
+ * @time 2019年8月10日 16:55:32
+ */
 @SpringBootApplication
 //如果mybatis中service实现类中加入事务注解，需要此处添加该注解
 @EnableTransactionManagement

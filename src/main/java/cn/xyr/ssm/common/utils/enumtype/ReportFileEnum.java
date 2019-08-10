@@ -8,7 +8,9 @@ package cn.xyr.ssm.common.utils.enumtype;
  */
 public enum ReportFileEnum {
 
-
+    /**
+     * 用户
+     */
     USER("用户", "用户名|密码|电话|年龄|生日", "userName|password|tel|age|birthdayStr");
 
 

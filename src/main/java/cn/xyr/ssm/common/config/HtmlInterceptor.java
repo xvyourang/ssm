@@ -44,9 +44,9 @@ public class HtmlInterceptor extends WebMvcConfigurationSupport {
 
     @Override
     public void addInterceptors(InterceptorRegistry registry) {
-
+        // 拦截器拦截地址规则及其例外
         registry.addInterceptor(new LoginInterceptor()).addPathPatterns("/**")
-                .excludePathPatterns(excludePathList);//例外
+                .excludePathPatterns(excludePathList);
         super.addInterceptors(registry);
     }
 
@@ -66,15 +66,16 @@ public class HtmlInterceptor extends WebMvcConfigurationSupport {
 
     @Override
     public void addResourceHandlers(ResourceHandlerRegistry registry) {
-        registry.addResourceHandler("/static/**") // 静态资源访问路径
-                .addResourceLocations("classpath:/static/"); // 静态资源映射路径 映射虚拟路径时使用file:D:/static
+        // 静态资源前端访问路径
+        registry.addResourceHandler("/static/**")
+                // 静态资源映射路径 映射虚拟路径时使用 file:D:/static
+                .addResourceLocations("classpath:/static/");
         super.addResourceHandlers(registry);
     }
 
 
     @Override
     public void configureMessageConverters(List<HttpMessageConverter<?>> converters) {
-
         //创建fastJson消息转换器
         FastJsonHttpMessageConverter fastConverter = new FastJsonHttpMessageConverter();
         //创建配置类

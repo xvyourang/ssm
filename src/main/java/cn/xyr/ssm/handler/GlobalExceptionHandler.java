@@ -1,8 +1,8 @@
 package cn.xyr.ssm.handler;
 
-import cn.xyr.ssm.model.dto.WebDTO;
 import cn.xyr.ssm.common.utils.enumtype.ResCodeEnum;
 import cn.xyr.ssm.common.utils.exception.BizException;
+import cn.xyr.ssm.model.dto.WebDTO;
 import com.alibaba.fastjson.JSONObject;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -27,9 +27,9 @@ public class GlobalExceptionHandler {
     public String handlerException(Throwable throwable) {
         String result = null;
         // map中的内容将存放在放回的json字符串中
-        Map<String, String> map = new HashMap<String, String>();
-        if(throwable instanceof BizException){
-            BizException biz=(BizException)throwable;
+        Map<String, String> map = new HashMap<>(10);
+        if (throwable instanceof BizException) {
+            BizException biz = (BizException) throwable;
             log.error("业务异常", biz);
             //重置result 返回业务异常
             if (biz.getMessageMap() != null) {
@@ -43,7 +43,7 @@ public class GlobalExceptionHandler {
             } catch (Exception e) {
                 log.info("接口返回数据转为json格式错误:", e);
             }
-        }else {
+        } else {
 
             log.error("系统异常", throwable);
             //重置result 返回系统异常
