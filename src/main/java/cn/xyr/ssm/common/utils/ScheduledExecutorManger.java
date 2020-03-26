@@ -103,7 +103,7 @@ public class ScheduledExecutorManger {
      */
     public static void stop(String taskName) {
         ScheduledFuture<?> scheduledFuture = concurrentHashMap.remove(taskName);
-        List<Future<?>> list = map.get(taskName);
+        List<Future<?>> list = map.remove(taskName);
         scheduledFuture.cancel(true);
         if (list != null) {
             for (Future<?> f : list) {

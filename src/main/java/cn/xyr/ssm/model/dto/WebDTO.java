@@ -1,7 +1,7 @@
 package cn.xyr.ssm.model.dto;
 
 import cn.xyr.ssm.common.utils.enumtype.ResCodeEnum;
-import com.github.miemiedev.mybatis.paginator.domain.PageList;
+import com.github.pagehelper.Page;
 
 import java.util.HashMap;
 
@@ -9,6 +9,7 @@ import java.util.HashMap;
  * 前端数据返回model
  *
  * @author XYR
+ * @since 2020/3/26
  */
 public class WebDTO<T> extends HashMap<String, Object> {
     /**
@@ -35,15 +36,15 @@ public class WebDTO<T> extends HashMap<String, Object> {
     /**
      * 总记录数
      */
-    private Integer total;
+    private Long total;
     /**
      * 总页数
      */
-    private int totalPages;
+    private Integer totalPages;
     /**
      * 包含数据和分页信息的list对象
      */
-    private PageList<T> list;
+    private Page<T> list;
 
     public WebDTO() {
     }
@@ -86,11 +87,11 @@ public class WebDTO<T> extends HashMap<String, Object> {
         put("data", data);
     }
 
-    public Integer getTotal() {
+    public Long getTotal() {
         return this.total;
     }
 
-    public void setTotal(int total) {
+    public void setTotal(long total) {
         this.total = total;
         put("total", total);
     }
@@ -105,14 +106,14 @@ public class WebDTO<T> extends HashMap<String, Object> {
     }
 
 
-    public PageList<T> getList() {
+    public Page<T> getList() {
         return list;
     }
 
-    public void setList(PageList<T> list) {
+    public void setList(Page<T> list) {
         this.list = list;
-        setTotalPages(list.getPaginator().getTotalPages());
-        setTotal(list.getPaginator().getTotalCount());
+        setTotalPages(list.getPages());
+        setTotal(list.getTotal());
     }
 
     @Override

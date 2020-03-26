@@ -22,6 +22,11 @@ spring:
 #mybats配置
 mybatis:
   mapper-locations:  classpath:mybatis/mapper/*Mapper.xml
-  type-aliases-package: cn.xyr.ssm.model.*
+  type-aliases-package: tk.mybatis.springboot.model
   configLocation: classpath:mybatis/mybatis-config.xml
-
+mapper:
+  mappers:
+    # 每个mapper文件都需要在这里添加
+    - cn.xyr.ssm.dao.mapper.UserMapper
+  not-empty: false
+  identity: MYSQL

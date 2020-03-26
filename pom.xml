@@ -31,6 +31,10 @@
         <httpclient.version>4.5.6</httpclient.version>
         <bcprov-jdk15on-version>1.57</bcprov-jdk15on-version>
         <ant-version>1.7.0</ant-version>
+        <pagehelper.version>5.1.11</pagehelper.version>
+        <tk.mybatis.version>2.1.5</tk.mybatis.version>
+        <pagehelper-spring-boot-version>1.2.13</pagehelper-spring-boot-version>
+        <lombok-version>1.16.10</lombok-version>
     </properties>
 
     <dependencies>
@@ -70,9 +74,19 @@
         </dependency>
         <!-- MyBatis 分页 -->
         <dependency>
-            <groupId>com.github.miemiedev</groupId>
-            <artifactId>mybatis-paginator</artifactId>
-            <version>${mybatis-paginator.version}</version>
+            <groupId>com.github.pagehelper</groupId>
+            <artifactId>pagehelper</artifactId>
+            <version>${pagehelper.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>tk.mybatis</groupId>
+            <artifactId>mapper-spring-boot-starter</artifactId>
+            <version>${tk.mybatis.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>com.github.pagehelper</groupId>
+            <artifactId>pagehelper-spring-boot-starter</artifactId>
+            <version>${pagehelper-spring-boot-version}</version>
         </dependency>
         <!--mysql-->
         <dependency>
@@ -130,12 +144,18 @@
             <artifactId>bcprov-jdk15on</artifactId>
             <version>${bcprov-jdk15on-version}</version>
         </dependency>
+        <dependency>
+            <groupId>org.projectlombok</groupId>
+            <artifactId>lombok</artifactId>
+            <version>${lombok-version}</version>
+        </dependency>
         <!-- zip 压缩工具 -->
         <dependency>
             <groupId>org.apache.ant</groupId>
             <artifactId>ant</artifactId>
             <version>${ant-version}</version>
         </dependency>
+
     </dependencies>
 
     <!-- 多环境配置 -->
