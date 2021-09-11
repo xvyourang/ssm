@@ -3,7 +3,7 @@ package main;
 import java.util.Arrays;
 import java.util.Scanner;
 
-public class Main0010 {
+public class Main010 {
 
     public static void main(String[] args) {
         // TODO Auto-generated method stub
