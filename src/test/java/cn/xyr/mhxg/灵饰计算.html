@@ -1,0 +1,330 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>灵饰计算</title>
+</head>
+<body>
+<p>计算中将格挡等价于防御，星辉石合成按40体力0.3W计算</p>
+<p>人族5气血=1属性，魔族6气血=1属性，仙族4.5气血=1属性</p>
+<p>人族1.5防御=1属性，魔族1.4防御=1属性，仙族1.6防御=1属性</p>
+<form action="" method="post" target="myIframe">
+    <p>
+        <label>属性一:</label>
+        <input id="a1" value="24"/>
+        <select id="s1"/>
+        <option value="防御">防御</option>
+        <option value="气血">气血</option>
+        </select>
+        <label>属性二:</label>
+        <input id="a2" value="24"/>
+        <select id="s2"/>
+        <option value="防御">防御</option>
+        <option value="气血">气血</option>
+        </select>
+    </p>
+    <p>
+        <label>属性三:</label>
+        <input id="a3" value="24"/>
+        <select id="s3"/>
+        <option value="防御">防御</option>
+        <option value="气血">气血</option>
+        </select>
+    </p>
+    <p>
+        <select onchange="change()" id="s4"/>
+        <option value="白板">白板</option>
+        <option value="带宝石">带宝石</option>
+        </select>
+        <label id="l1">价格：</label>
+        <input id="p1" value="5000"/>
+        <label id="l2">万，星辉石单价：</label>
+        <input id="p2" value="13"/>
+        <label id="l3" style="display:none;">万，宝石段数：</label>
+        <input id="p3" value="5" style="display:none;"/>
+        <label id="l4">万</label>
+        <button onclick="onClick()">计算</button>
+    </p>
+</form>
+<table border="2">
+    <tr id="tr1">
+        <th colspan="2"></th>
+        <th>白板</th>
+        <th>1级</th>
+        <th>2级</th>
+        <th>3级</th>
+        <th>4级</th>
+        <th>5级</th>
+        <th>6级</th>
+        <th>7级</th>
+        <th>8级</th>
+    </tr>
+    <tr id="tr2">
+        <td rowspan="3" style="writing-mode:tb-rl">每点属性价格</td>
+        <td>人族</td>
+        <td id="td2-0">白板</td>
+        <td id="td2-1">1级</td>
+        <td id="td2-2">2级</td>
+        <td id="td2-3">3级</td>
+        <td id="td2-4">4级</td>
+        <td id="td2-5">5级</td>
+        <td id="td2-6">6级</td>
+        <td id="td2-7">7级</td>
+        <td id="td2-8">8级</td>
+    </tr>
+    <tr id="tr3">
+        <td>魔族</td>
+        <td id="td3-0">白板</td>
+        <td id="td3-1">1级</td>
+        <td id="td3-2">2级</td>
+        <td id="td3-3">3级</td>
+        <td id="td3-4">4级</td>
+        <td id="td3-5">5级</td>
+        <td id="td3-6">6级</td>
+        <td id="td3-7">7级</td>
+        <td id="td3-8">8级</td>
+    </tr>
+    <tr>
+        <td>仙族</td>
+        <td id="td4-0">白板</td>
+        <td id="td4-1">1级</td>
+        <td id="td4-2">2级</td>
+        <td id="td4-3">3级</td>
+        <td id="td4-4">4级</td>
+        <td id="td4-5">5级</td>
+        <td id="td4-6">6级</td>
+        <td id="td4-7">7级</td>
+        <td id="td4-8">8级</td>
+    </tr>
+    <tr>
+        <td rowspan="3" style="writing-mode:tb-rl">总等价属性</td>
+        <td>人族</td>
+        <td id="td5-0">白板</td>
+        <td id="td5-1">1级</td>
+        <td id="td5-2">2级</td>
+        <td id="td5-3">3级</td>
+        <td id="td5-4">4级</td>
+        <td id="td5-5">5级</td>
+        <td id="td5-6">6级</td>
+        <td id="td5-7">7级</td>
+        <td id="td5-8">8级</td>
+    </tr>
+    <tr>
+        <td>魔族</td>
+        <td id="td6-0">白板</td>
+        <td id="td6-1">1级</td>
+        <td id="td6-2">2级</td>
+        <td id="td6-3">3级</td>
+        <td id="td6-4">4级</td>
+        <td id="td6-5">5级</td>
+        <td id="td6-6">6级</td>
+        <td id="td6-7">7级</td>
+        <td id="td6-8">8级</td>
+    </tr>
+    <tr>
+        <td>仙族</td>
+        <td id="td7-0">白板</td>
+        <td id="td7-1">1级</td>
+        <td id="td7-2">2级</td>
+        <td id="td7-3">3级</td>
+        <td id="td7-4">4级</td>
+        <td id="td7-5">5级</td>
+        <td id="td7-6">6级</td>
+        <td id="td7-7">7级</td>
+        <td id="td7-8">8级</td>
+    </tr>
+    <tr>
+        <td rowspan="2" style="writing-mode:tb-rl">总属性</td>
+        <td>气血</td>
+        <td id="td8-0">白板</td>
+        <td id="td8-1">1级</td>
+        <td id="td8-2">2级</td>
+        <td id="td8-3">3级</td>
+        <td id="td8-4">4级</td>
+        <td id="td8-5">5级</td>
+        <td id="td8-6">6级</td>
+        <td id="td8-7">7级</td>
+        <td id="td8-8">8级</td>
+    </tr>
+    <tr>
+        <td>防御</td>
+        <td id="td9-0">白板</td>
+        <td id="td9-1">1级</td>
+        <td id="td9-2">2级</td>
+        <td id="td9-3">3级</td>
+        <td id="td9-4">4级</td>
+        <td id="td9-5">5级</td>
+        <td id="td9-6">6级</td>
+        <td id="td9-7">7级</td>
+        <td id="td9-8">8级</td>
+    </tr>
+    <tr>
+        <td colspan="2">总价</td>
+        <td id="td10-0">白板</td>
+        <td id="td10-1">1级</td>
+        <td id="td10-2">2级</td>
+        <td id="td10-3">3级</td>
+        <td id="td10-4">4级</td>
+        <td id="td10-5">5级</td>
+        <td id="td10-6">6级</td>
+        <td id="td10-7">7级</td>
+        <td id="td10-8">8级</td>
+    </tr>
+
+
+</table>
+
+<iframe src="" style="display:none;" name="myIframe"></iframe>
+<p>武器等价固伤/法伤</p>
+<p>女儿村：敏捷=0.5固伤，伤害=0.18固伤</p>
+<p>地府：敏捷=0.35固伤，伤害=0.15固伤</p>
+<p>普陀山：敏捷=0.7固伤，伤害=0.24固伤</p>
+<p>无底洞：敏捷=0.7固伤，伤害=0.25固伤</p>
+<p>神木林：魔力=0.7法伤，伤害=0.25法伤</p>
+<form action="" method="post" target="myIframe">
+    <p>
+        <label>伤害：</label>
+        <input id="b1" value="388"/>
+        </select>
+        <label>敏捷/魔力:</label>
+        <input id="b2" value="37"/>
+        </select>
+        <button onclick="onClickWeapon()">计算</button>
+    </p>
+</form>
+<table border="2">
+    <tr>
+        <th>门派</th>
+        <th>女儿村</th>
+        <th>地府</th>
+        <th>普陀山</th>
+        <th>无底洞</th>
+        <th>神木林</th>
+    </tr>
+    <tr>
+        <td>固伤</td>
+        <td id="attr-1">999</td>
+        <td id="attr-2">999</td>
+        <td id="attr-3">999</td>
+        <td id="attr-4">999</td>
+        <td id="attr-5">999</td>
+    </tr>
+</table>
+</body>
+<script>
+    // 每级星辉石每条属性增加的人物属性
+    let hp = 28;
+    let defense = 8;
+
+    // 计算星辉石价格
+    function xhs(p, level) {
+        if (level < 2) {
+            return level === 0 ? 0 : p;
+        }
+        let arr = [];
+        arr[1] = p;
+        let result = p;
+        for (let i = 2; i <= level; i++) {
+            arr[i] = arr[i - 1] * 3 + 0.225 * i;
+            //console.log(i + "->" + arr[i]);
+            result += arr[i];
+        }
+        return result;
+    }
+
+    // 计算总等价属性
+    function solution(arr, p1, p2) {
+        // 0-8段星辉石
+        for (let i = 0; i < 9; i++) {
+            //  人 魔 仙 属性
+            let hpValue = 0;
+            let defenseValue = 0;
+            let terransValue = 0;
+            let asmodiansValue = 0;
+            let immortalValue = 0;
+            // 价格 p1+星辉石价格
+            let price = p1 + xhs(p2, i);
+            // 3条属性
+            for (let j = 0; j < arr.length; j++) {
+                let {k, v} = arr[j];
+                v = parseInt(v);
+                if (k === "气血") {
+                    let h = (v + hp * i);
+                    hpValue += h;
+                    terransValue += h / 5;
+                    asmodiansValue += h / 6;
+                    immortalValue += h / 4.5;
+                } else if (k === "防御") {
+                    let d = (v + defense * i);
+                    defenseValue += d;
+                    terransValue += d / 1.5;
+                    asmodiansValue += d / 1.4;
+                    immortalValue += d / 1.6;
+                }
+            }
+            // 填充表格
+            // 总属性
+            document.getElementById("td5-" + i).innerText = terransValue.toFixed(2) + "";
+            document.getElementById("td6-" + i).innerText = asmodiansValue.toFixed(2) + "";
+            document.getElementById("td7-" + i).innerText = immortalValue.toFixed(2) + "";
+            // 价格
+            document.getElementById("td2-" + i).innerText = (price / terransValue).toFixed(2) + "";
+            document.getElementById("td3-" + i).innerText = (price / asmodiansValue).toFixed(2) + "";
+            document.getElementById("td4-" + i).innerText = (price / immortalValue).toFixed(2) + "";
+            document.getElementById("td10-" + i).innerText = price.toFixed(2) + "";
+            // 属性
+            document.getElementById("td8-" + i).innerText = hpValue + "";
+            document.getElementById("td9-" + i).innerText = defenseValue + "";
+        }
+    }
+
+    // 按钮计算事件
+    function onClick() {
+        let a1 = document.getElementById("a1").value;
+        let s1 = document.getElementById("s1").value;
+        let a2 = document.getElementById("a2").value;
+        let s2 = document.getElementById("s2").value;
+        let a3 = document.getElementById("a3").value;
+        let s3 = document.getElementById("s3").value;
+        let s4 = document.getElementById("s4").value;
+        let p1 = document.getElementById("p1").value;
+        let p2 = document.getElementById("p2").value;
+        let p3 = document.getElementById("p3").value;
+        //如果带宝石则计算白板价格
+        if (s4 === "带宝石") {
+            p1 = p1 - xhs(parseInt(p2), parseInt(p3))
+        }
+        // 计算总等价属性
+        let arr = [{k: s1, v: a1}, {k: s2, v: a2}, {k: s3, v: a3}];
+        solution(arr, parseInt(p1), parseInt(p2));
+
+        // 计算白板人族每点属性价格
+    }
+
+    function change() {
+        let s4 = document.getElementById("s4").value;
+        if (s4 === "白板") {
+            document.getElementById("l3").style = "display:none;";
+            document.getElementById("p3").style = "display:none;";
+            document.getElementById("l4").innerText = "万"
+        } else if (s4 === "带宝石") {
+            document.getElementById("l3").style = null;
+            document.getElementById("p3").style = null;
+            document.getElementById("l4").innerText = "段"
+        }
+    }
+
+    function onClickWeapon() {
+        let b1 = document.getElementById("b1").value;
+        let b2 = document.getElementById("b2").value;
+        // 计算伤害等价固伤
+        b1 = parseInt(b1)
+        b2 = parseInt(b2)
+        let res = [0.18 * b1 + 0.5 * b2, 0.15 * b1 + 0.35 * b2, 0.24 * b1 + 0.7 * b2, 0.25 * b1 + 0.7 * b2, 0.25 * b1 + 0.7 * b2];
+        // 计算敏捷等级固伤
+        for (let i = 1; i < 6; i++) {
+            document.getElementById("attr-" + i).innerText = res[i-1].toFixed(1) + "";
+        }
+    }
+</script>
+</html>

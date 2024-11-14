@@ -35,3 +35,5 @@ logging:
   file: /home/ssm/logs.log
   level:
     cn.xyr.ssm: info
+  pattern:
+    console: '%msg%n'

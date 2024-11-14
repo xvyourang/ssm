@@ -22,18 +22,15 @@ public class Test02 {
         List<Integer> arr = new ArrayList<>();
         for (int i = 1; i <= n; i++) {
             arr.add(i);
-
         }
         for (int i = 1; i <= n; i++) {
             js(k, "", arr, i);
         }
-
         System.out.println(result);
     }
 
     /**
-     *
-     * @param k 结果索引
+     * @param k   结果索引
      * @param str 当前字符串
      * @param arr 可用数组
      * @param now 当前数字
@@ -53,7 +50,7 @@ public class Test02 {
         List<Integer> list = new ArrayList<>(arr);
         list.remove((Integer) now);
         for (int i = 0; i < list.size(); i++) {
-            js( k, tmp, list, list.get(i));
+            js(k, tmp, list, list.get(i));
         }
     }
 }

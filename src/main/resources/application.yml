@@ -30,3 +30,7 @@ mapper:
     - cn.xyr.ssm.dao.mapper.UserMapper
   not-empty: false
   identity: MYSQL
+
+logging:
+  pattern:
+    console: '%msg%n'
