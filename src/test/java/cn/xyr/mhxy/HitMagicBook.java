@@ -1,4 +1,4 @@
-package cn.xyr.mhxg;
+package cn.xyr.mhxy;
 
 import org.junit.Test;
 

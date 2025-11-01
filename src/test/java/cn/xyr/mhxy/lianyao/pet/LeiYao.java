@@ -1,6 +1,6 @@
-package cn.xyr.mhxg.lianyao.pet;
+package cn.xyr.mhxy.lianyao.pet;
 
-import cn.xyr.mhxg.MagicBooK;
+import cn.xyr.mhxy.MagicBooK;
 import lombok.Getter;
 
 import java.util.Collections;

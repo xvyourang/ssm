@@ -1,17 +1,12 @@
-package cn.xyr.mhxg.lianyao;
+package cn.xyr.mhxy.lianyao;
 
 import ch.qos.logback.classic.Level;
 import ch.qos.logback.classic.Logger;
 import ch.qos.logback.classic.LoggerContext;
 import ch.qos.logback.classic.encoder.PatternLayoutEncoder;
-import ch.qos.logback.classic.layout.TTLLLayout;
 import ch.qos.logback.classic.spi.ILoggingEvent;
-import ch.qos.logback.core.Appender;
 import ch.qos.logback.core.ConsoleAppender;
-import ch.qos.logback.core.Layout;
-import ch.qos.logback.core.encoder.Encoder;
-import ch.qos.logback.core.encoder.LayoutWrappingEncoder;
-import cn.xyr.mhxg.lianyao.pet.*;
+import cn.xyr.mhxy.lianyao.pet.*;
 import org.slf4j.LoggerFactory;
 
 import java.util.ArrayList;

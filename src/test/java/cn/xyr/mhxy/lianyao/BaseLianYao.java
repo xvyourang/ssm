@@ -1,9 +1,9 @@
-package cn.xyr.mhxg.lianyao;
+package cn.xyr.mhxy.lianyao;
 
 
 import ch.qos.logback.classic.Level;
-import cn.xyr.mhxg.MagicBooK;
-import cn.xyr.mhxg.lianyao.pet.*;
+import cn.xyr.mhxy.MagicBooK;
+import cn.xyr.mhxy.lianyao.pet.*;
 import lombok.extern.slf4j.Slf4j;
 import org.junit.Test;
 

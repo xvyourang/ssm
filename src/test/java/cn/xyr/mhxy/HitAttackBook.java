@@ -1,4 +1,4 @@
-package cn.xyr.mhxg;
+package cn.xyr.mhxy;
 
 import java.io.BufferedOutputStream;
 import java.io.FileOutputStream;
@@ -24,7 +24,9 @@ public class HitAttackBook {
         set.add(MagicBooK.GJQG);
         set.add(MagicBooK.GJMJ);
         set.add(MagicBooK.GJQL);
-        SimpleDateFormat sdf =new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
+        set.add(MagicBooK.GJFX);
+        set.add(MagicBooK.GJGZ);
+        SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
         write(sdf.format(new Date()) + System.lineSeparator());
         dashu(9, 100000, set);
 //        int min = set.size();
@@ -37,6 +39,8 @@ public class HitAttackBook {
 
     public static Random random = new Random();
 
+    private static Map<MagicBooK, Integer> bookMap = new HashMap<>();
+
     /**
      * 打书
      *
@@ -47,7 +51,7 @@ public class HitAttackBook {
     public static void dashu(int n, int count, Set<MagicBooK> aimSkill) {
         Set<MagicBooK> set = new HashSet<>();
         ArrayList<MagicBooK> otherBooks = MagicBooK.getOtherBooks(aimSkill);
-        while (set.size()<n){
+        while (set.size() < n) {
             set.add(otherBooks.get(random.nextInt(otherBooks.size())));
         }
         long total = 0;
@@ -58,12 +62,15 @@ public class HitAttackBook {
             total += dashu(base, set, list);
         }
         write("胚子单价：" + base.getPrice() + ",技能数:" + n + "，实验次数:" + count + ",平均花费：" + (total / count) + System.lineSeparator());
+        bookMap.forEach((k,v)->{
+            write(k.getName()+"价格:"+k.getPrice()+"，总消耗"+v+"本，平均消耗"+(((float)v)/count)+"本。"+ System.lineSeparator());
+        });
     }
 
     /**
      * 打书
      *
-     * @param base   胚子
+     * @param base     胚子
      * @param skillSet 当前技能列表
      * @param aimSkill 目标技能列表,优先队列
      * @return 成品花费
@@ -96,6 +103,8 @@ public class HitAttackBook {
         MagicBooK s = list.get(random.nextInt(list.size()));
         skillSet.remove(s);
         skillSet.add(skill);
+        Integer integer = bookMap.computeIfAbsent(skill, k->0);
+        bookMap.put(skill, integer + 1);
         //write("技能列表" + skillSet + "," + skill + "顶掉" + s+System.lineSeparator());
     }
 

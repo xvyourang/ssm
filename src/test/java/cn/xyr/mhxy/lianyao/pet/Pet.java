@@ -1,7 +1,7 @@
-package cn.xyr.mhxg.lianyao.pet;
+package cn.xyr.mhxy.lianyao.pet;
 
-import cn.xyr.mhxg.MagicBooK;
-import cn.xyr.mhxg.lianyao.Config;
+import cn.xyr.mhxy.MagicBooK;
+import cn.xyr.mhxy.lianyao.Config;
 import lombok.Getter;
 import lombok.extern.slf4j.Slf4j;
 

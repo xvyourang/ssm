@@ -1,11 +1,11 @@
-package cn.xyr.mhxg.lianyao;
+package cn.xyr.mhxy.lianyao;
 
 import ch.qos.logback.classic.Level;
-import cn.xyr.mhxg.MagicBooK;
-import cn.xyr.mhxg.lianyao.pet.JiGuanNiao;
-import cn.xyr.mhxg.lianyao.pet.LeiYao;
-import cn.xyr.mhxg.lianyao.pet.Pet;
-import cn.xyr.mhxg.lianyao.pet.RiYouShen;
+import cn.xyr.mhxy.MagicBooK;
+import cn.xyr.mhxy.lianyao.pet.JiGuanNiao;
+import cn.xyr.mhxy.lianyao.pet.LeiYao;
+import cn.xyr.mhxy.lianyao.pet.Pet;
+import cn.xyr.mhxy.lianyao.pet.RiYouShen;
 import lombok.extern.slf4j.Slf4j;
 import org.junit.Test;
 

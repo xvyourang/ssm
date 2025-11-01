@@ -1,4 +1,4 @@
-package cn.xyr.mhxg;
+package cn.xyr.mhxy;
 
 import ch.qos.logback.classic.Level;
 import lombok.extern.slf4j.Slf4j;

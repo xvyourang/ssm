@@ -1,6 +1,6 @@
-package cn.xyr.mhxg.lianyao.pet;
+package cn.xyr.mhxy.lianyao.pet;
 
-import cn.xyr.mhxg.MagicBooK;
+import cn.xyr.mhxy.MagicBooK;
 import lombok.Getter;
 
 import java.util.Collections;
@@ -11,28 +11,29 @@ import java.util.Set;
  * 日游神
  */
 
-public class DaBianFu extends Pet {
-
+public class JiGuanNiao extends Pet {
 
     public static final Set<MagicBooK> baseSkill = Collections.unmodifiableSet(new HashSet<MagicBooK>() {{
         add(MagicBooK.FX);
-        add(MagicBooK.GJYZ);
-        add(MagicBooK.RDS);
     }});
 
     public static final Set<MagicBooK> extSkill = Collections.unmodifiableSet(new HashSet<MagicBooK>() {{
-        add(MagicBooK.XX);
-        add(MagicBooK.GJGZ);
-        add(MagicBooK.GJQG);
+        add(MagicBooK.GJTX);
+        add(MagicBooK.YZ);
+        add(MagicBooK.GJZS);
+        add(MagicBooK.FDXY);
     }});
+
+
     public static final Set<MagicBooK> allSkill = Collections.unmodifiableSet(new HashSet<MagicBooK>() {{
         addAll(extSkill);
         addAll(baseSkill);
     }});
 
+    @Getter
     public static final int maxSkill = allSkill.size();
 
-    public DaBianFu(int skill) {
+    public JiGuanNiao(int skill) {
         super(skill);
     }
 
@@ -48,12 +49,12 @@ public class DaBianFu extends Pet {
 
     @Override
     public int getType() {
-        return 0;
+        return 1;
     }
 
     @Override
     public String getTypeName() {
-        return "大蝙蝠";
+        return "机关鸟";
     }
 
     @Override
