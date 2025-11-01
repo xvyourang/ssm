@@ -20,7 +20,7 @@ public class QingLingXianLu {
         map.put(6, new Integer[]{34, 67, 100});
         map.put(7, new Integer[]{34, 67, 100});
         map.put(8, new Integer[]{34, 67, 100});
-        priceMap.put(-1, 51);
+        priceMap.put(0, 51);
         priceMap.put(6, 55);
         priceMap.put(7, 450);
         priceMap.put(8, 850);
@@ -43,18 +43,18 @@ public class QingLingXianLu {
         while (scanner.hasNext()) {
             String next = scanner.next();
             int value = Integer.parseInt(next);
-            if (value == -1) {
-                eat(-1);
+            if (value == 0) {
+                eat(0);
                 now = 50;
                 count = 0;
-            } else if (value == 0) {
+            } else if (value == -1) {
                 long total = 0;
                 for (Map.Entry<Integer, Integer> entry : totalMap.entrySet()) {
                     total += Long.valueOf(priceMap.get(entry.getKey())) * entry.getValue();
                 }
                 log.info("实验次数{}次，平均花费{}万", count, total / count);
                 final int tmp = success;
-                totalMap.forEach((k, v) -> log.info("{}价格{},总消耗{}，平均消耗{}", k == -1 ? "洗了重来" : k, priceMap.get(k), v, Float.valueOf(v) / tmp));
+                totalMap.forEach((k, v) -> log.info("{}价格{},总消耗{}，平均消耗{}", k == 0 ? "洗了重来" : k, priceMap.get(k), v, Float.valueOf(v) / tmp));
             } else {
                 if (count < 6) {
                     now += eat(value);
@@ -64,7 +64,7 @@ public class QingLingXianLu {
                     now += eat(value);
                     log.info("当期灵性值{}", now);
                     if (now != 110) {
-                        eat(-1);
+                        eat(0);
                     } else {
                         success++;
                     }
@@ -104,7 +104,7 @@ public class QingLingXianLu {
             total += Long.valueOf(priceMap.get(entry.getKey())) * entry.getValue();
         }
         log.info("实验次数{}次，策略前{}都吃6爆8，平均花费{}万", count, sixCount, total / count);
-        totalMap.forEach((k, v) -> log.info("{}价格{},总消耗{}，平均消耗{}", k == -1 ? "洗了重来" : k, priceMap.get(k), v, Float.valueOf(v) / count));
+        totalMap.forEach((k, v) -> log.info("{}价格{},总消耗{}，平均消耗{}", k == 0 ? "洗了重来" : k, priceMap.get(k), v, Float.valueOf(v) / count));
     }
 
     /**
@@ -123,7 +123,7 @@ public class QingLingXianLu {
                         now += result;
                     } else {
                         // 没达标 洗掉
-                        eat(-1);
+                        eat(0);
                         now = 50;
                         i = -1;
                     }
@@ -138,7 +138,7 @@ public class QingLingXianLu {
             }
             log.debug("当期值{}", now);
             if (now != aim) {
-                eat(-1);
+                eat(0);
             }
         } while (now != aim);
     }
@@ -149,9 +149,9 @@ public class QingLingXianLu {
     private static int eat(int value) {
         Integer integer = totalMap.computeIfAbsent(value, k -> 0);
         totalMap.put(value, integer + 1);
-        if (value == -1) {
+        if (value == 0) {
             log.debug("洗了重来");
-            return -1;
+            return 0;
         }
         int r = random.nextInt(100);
         Integer[] arr = map.get(value);
