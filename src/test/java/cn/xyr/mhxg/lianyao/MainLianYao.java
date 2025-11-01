@@ -62,7 +62,7 @@ public class MainLianYao {
     private static Map<Integer, Integer> map = Collections.unmodifiableMap(new HashMap<Integer, Integer>() {{
         // 合8技能 极限是7+3+10=20?
         put(4, 20);
-        put(5, 100);
+        put(5, 150);
         put(6, 350);
         put(7, 1000);
         put(8, 2500);
@@ -107,8 +107,8 @@ public class MainLianYao {
         Config.setLevel(Level.INFO);
 //        Config.setLevel(Level.INFO);
 //        Config.setLevel(Level.ERROR);
-        Config.addSkill = 3;
-        solution(5, 7, 3, 3, 8);
+        Config.addSkill = 2;
+        solution(1, 7, 2, 6, 9);
 
 
     }
